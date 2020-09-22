@@ -35,8 +35,6 @@ const updatePackage = file => {
         reject(parseError);
       }
 
-      // Iterate through 'dependencies' and 'devDependencies', replacing
-      // packages beginning with 'bpk-'.
       if (fileContents.dependencies) {
         fileContents.dependencies = replaceOccurrences(
           fileContents.dependencies,
@@ -45,6 +43,11 @@ const updatePackage = file => {
       if (fileContents.devDependencies) {
         fileContents.devDependencies = replaceOccurrences(
           fileContents.devDependencies,
+        );
+      }
+      if (fileContents.peerDependencies) {
+        fileContents.peerDependencies = replaceOccurrences(
+          fileContents.peerDependencies,
         );
       }
 
