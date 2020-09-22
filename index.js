@@ -55,7 +55,7 @@ const updatePackage = file => {
 
       let updatedPackageJson;
       try {
-        updatedPackageJson = JSON.stringify(fileContents);
+        updatedPackageJson = JSON.stringify(fileContents, null, '  ');
       } catch (jsonError) {
         reject(jsonError);
       }
