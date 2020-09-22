@@ -30,9 +30,9 @@ const updatePackage = file => {
       if (readError) {
         reject(readError);
       }
-      let fileContents = data;
+      let fileContents;
       try {
-        fileContents = JSON.parse(fileContents);
+        fileContents = JSON.parse(data);
       } catch (parseError) {
         reject(parseError);
       }
@@ -53,7 +53,14 @@ const updatePackage = file => {
         );
       }
 
-      fs.writeFile(file, fileContents, 'utf8', writeError => {
+      let updatedPackageJson;
+      try {
+        updatedPackageJson = JSON.stringify(fileContents);
+      } catch (jsonError) {
+        reject(jsonError);
+      }
+
+      fs.writeFile(file, updatedPackageJson, 'utf8', writeError => {
         if (writeError) {
           return reject(writeError);
         }
