@@ -1,9 +1,11 @@
 {
   "name": "@skyscanner/bpk-scope-migration",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": {
+    "@skyscanner/bpk-scope-migration": "index.js"
+  },
   "scripts": {
     "test": "jest",
     "lint": "eslint . --ext js"
