@@ -1,0 +1,41 @@
+{
+  "name": "@skyscanner/bpk-scope-migration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . --ext js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skyscanner/bpk-scope-migration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skyscanner/bpk-scope-migration/issues"
+  },
+  "homepage": "https://github.com/Skyscanner/bpk-scope-migration#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint-config-skyscanner": "^7.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
+  }
+}
