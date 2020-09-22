@@ -25,7 +25,7 @@ const prependPackageNameIfNecessary = packageName => {
     return packageName;
   }
   console.log(
-    colors.yellow(`Replacing '${matches[0]}' with '@skyscanner/${matches[0]}'`),
+    colors.yellow(`Replaced '${matches[0]}' with '@skyscanner/${matches[0]}'.`),
   );
   return `@skyscanner/${matches[0]}`;
 };

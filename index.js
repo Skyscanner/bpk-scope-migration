@@ -70,6 +70,8 @@ const updatePackage = file => {
   });
 };
 
+console.log(colors.blue('🎒 Scanning package.json..'));
+
 updatePackage('package.json')
   .then(() => {
     console.log(colors.green(`All done. 😎`));
